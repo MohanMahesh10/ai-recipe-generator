@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Recipe Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-utensils"></i> Smart Recipe Generator</h1>
+            <p>Turn your available ingredients into delicious meals!</p>
+        </div>
+        
+        <div class="card">
+            <div class="ingredients-input">
+                <h2><i class="fas fa-carrot"></i> Your Ingredients</h2>
+                <p>Enter the ingredients you have available</p>
+                <div class="input-group">
+                    <input type="text" id="ingredient-input" 
+                           placeholder="Type an ingredient (e.g., chicken, tomatoes, rice)"
+                           onkeypress="handleKeyPress(event)">
+                    <button onclick="addIngredient()" class="btn btn-add">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+                <ul id="ingredients-list"></ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="preferences">
+                <h2><i class="fas fa-heart"></i> Dietary Preferences</h2>
+                <p>Select any dietary restrictions or preferences</p>
+                <select id="dietary-preferences">
+                    <option value="">No specific preference</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten-free</option>
+                    <option value="keto">Keto</option>
+                    <option value="low-carb">Low Carb</option>
+                    <option value="dairy-free">Dairy Free</option>
+                    <option value="paleo">Paleo</option>
+                </select>
+            </div>
+        </div>
+
+        <button onclick="generateRecipe()" class="btn generate-btn">
+            <i class="fas fa-magic"></i> Generate Recipe
+        </button>
+
+        <div id="loading" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p>Creating your perfect recipe...</p>
+        </div>
+
+        <div id="recipe-result" class="recipe-card hidden">
+            <!-- Recipe will be displayed here -->
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> 
