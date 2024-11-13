@@ -1,2 +1,8 @@
-# Replace with your actual Gemini API key
-GEMINI_API_KEY = "AIzaSyA_ofEKDbtj42KAe8cWy4znIKoMJo77d0E" 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Get API key from environment variable
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY') 
