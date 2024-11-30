@@ -18,10 +18,3 @@ An AI-powered recipe generator that creates personalized recipes based on ingred
   - Dairy-free
   - Paleo
 
-## 🚀 Live Demo
-
-Try the application here: [AI Recipe Generator](https://your-streamlit-app-url.streamlit.app)
-
-## 🛠️ Installation
-
-1. Clone the repository
